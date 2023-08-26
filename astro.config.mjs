@@ -5,4 +5,6 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), astroI18next()],
+  site: 'https://miguelroot.github.io',
+  base: '/astro-landing-in',
 });

@@ -2,12 +2,15 @@
 import Layout from "../layouts/Layout.astro";
 // import Card from "../components/Card.astro";
 import i18next, { t, changeLanguage } from "i18next";
-import { Trans, HeadHrefLangs } from "astro-i18next/components";
 
 changeLanguage("en");
+
+// import { Trans, HeadHrefLangs } from "astro-i18next/components";
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1); // remove the first "/"
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="inPerú Expeditions">
   <main
     class="snap-y snap-mandatory relative w-full h-screen overflow-y-auto overflow-x-hidden scroll-smooth"
   >
@@ -17,7 +20,7 @@ changeLanguage("en");
     </div>
 
 
-    <a class="hidden sm:block showdown absolute bg-white bottom-[80px] right-[20px] p-4 z-30 rounded-xl pe-10" target="_blank" href="https://whatsapp.com/send?phone=34123456789">
+    <a class="hidden sm:block showdown absolute bg-white bottom-[80px] right-[20px] p-4 z-30 rounded-xl pe-10" target="_blank" href={t("base.whatsapp")}>
       <!-- <div class="absolute top-2 right-2">
         <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M17.59 5.5957L12 11.1857L6.41 5.5957L5 7.0057L10.59 12.5957L5 18.1857L6.41 19.5957L12 14.0057L17.59 19.5957L19 18.1857L13.41 12.5957L19 7.0057L17.59 5.5957Z" fill="#ACB2BD"/>
@@ -32,7 +35,7 @@ changeLanguage("en");
       <div class="font-semibold text-[#00627A]">{t("whatsapp.message")}</div>
     </a>
 
-    <a class="absolute bottom-4 right-4 z-20" target="_blank" href="https://whatsapp.com/send?phone=34123456789">
+    <a class="absolute bottom-4 right-4 z-20" target="_blank" href={t("base.whatsapp")}>
       <svg width="50" height="54" viewBox="0 0 50 54" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g clip-path="url(#clip0_7836_5986)">
         <path d="M1.00294 29.8335C1.00184 33.7824 2.04172 37.6382 4.01902 41.0368L0.813843 52.6487L12.79 49.5329C16.1025 51.3222 19.8139 52.2597 23.5853 52.26H23.5953C36.0457 52.26 46.1806 42.2072 46.1859 29.8512C46.1883 23.8638 43.8405 18.2336 39.5749 13.9978C35.31 9.7623 29.6379 7.42851 23.5943 7.42578C11.1425 7.42578 1.00827 17.478 1.00313 29.8335" fill="url(#paint0_linear_7836_5986)"/>
@@ -168,37 +171,37 @@ changeLanguage("en");
             aria-labelledby="dropdownDefaultButton"
           >
             <li>
-              <a
-                href="#"
+              <a target="_blank"
+                href="https://instagram.com/inperuexpeditions?igshid=MmIzYWVlNDQ5Yg=="
                 class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                 >Instagram</a
               >
             </li>
             <li>
-              <a
-                href="#"
+              <a target="_blank"
+                href="https://youtube.com/@inPeruExpeditions"
                 class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                 >Youtube</a
               >
             </li>
             <li>
-              <a
-                href="#"
+              <a target="_blank"
+                href="https://www.facebook.com/inPeruExpeditions?mibextid=LQQJ4d"
                 class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                 >Facebook</a
               >
             </li>
             <li>
-              <a
-                href="#"
+              <a target="_blank"
+                href="https://www.tripadvisor.com.pe/Attraction_Review-g294316-d26533316-Reviews-InPeru_Expeditions-Lima_Lima_Region.html"
                 class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                 >Tripadvisor</a
               >
             </li>
           </ul>
           <div class="py-2">
-            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Spanish</a>
-            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">English</a>
+            <a href={t("base.root")} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">English</a>
+            <a href={t("base.root") + t("base.es")} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Spanish</a>
           </div>
         </div>
       </div>
@@ -257,13 +260,11 @@ changeLanguage("en");
             </svg>
           </li>
           <li>
-            <a
-              class="leading-[1.5rem] font-semibold"
-              href="/"
-              class="font-medium">EN</a
+            <a class={currentPath.includes(t("language")) ? 'leading-[1.5rem]': 'leading-[1.5rem] font-bold'}
+              href={t("base.root")}>EN</a
             >
           </li>
-          <li><a class="leading-[1.5rem]" href="/es">ES</a></li>
+          <li><a class={currentPath.includes(t("language")) ? 'leading-[1.5rem] font-bold': 'leading-[1.5rem]'} href={t("base.root") + t("base.es")}>ES</a></li>
         </ul>
       </nav>
     </header>
