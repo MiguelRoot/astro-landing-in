@@ -1,1 +1,0 @@
-import{D as o}from"./index.0eabac31.js";const e=document.getElementById("dropdownMenu"),n=document.getElementById("dropdownButton"),d={offsetSkidding:100,offsetDistance:100,triggerType:"click",delay:300,onHide:()=>{console.log("dropdown has been hidden")},onShow:()=>{console.log("dropdown has been shown")},onToggle:()=>{console.log("dropdown has been toggled")}};new o(e,n,d);

@@ -1,21 +1,27 @@
 {
+    "body": {
+        "title": "Los mejores tours en Perú, privados y personalizados | InPeruExpeditions",
+        "description": "Descubra y disfrute del Perú. Ofrecemos los mejores tours en Lima, Paracas, Ica, Nasca y Cusco. ¡Reserva ahora!"
+    },
     "site": {
         "title": "Disfruta lo mejor del Perú",
         "subtitle": "Tours privados",
-        "action": "¡Reserva ahora mismo!",
+        "action": "¡Reserva ahora!",
         "downButton": "Descarga Brochure"
     },
     "language": "es",
     "whatsapp": {
         "user": "Asesor",
-        "message": "¿Podemos ayudarte?"
+        "message": "¿Podemos ayudarte?",
+        "action": "Reservas",
+        "email": "info@inperuexpeditions.com"
     },
     "seo": {
-        "description": "Descubre los encantos de Perú mientras exploras sus maravillas turísticas: desde el místico Machu Picchu hasta la histórica Cusco. Pasea por las vibrantes calles de Lima y admira la belleza del Valle Sagrado de los Incas. Sumérgete en la cultura de Arequipa, maravíllate en las aguas del Lago Titicaca y contempla los enigmáticos trazos de las Líneas de Nazca. Adéntrate en la exuberante biodiversidad del Parque Nacional Manú y el Parque Nacional Huascarán. Explora la selva amazónica y maravíllate con la arquitectura de Trujillo y la grandeza de Chan Chan."
+        "description": "Somos inPerú Expeditions, si estás planeando visitar Perú, descubre y disfruta con nostros lo mejor de nuestro país. Ofrecemos tours privados y personalizados en Lima, Paracas, Ica, Nasca y Cusco; Excursiones turisticas, full days y tours de medio día, tours guiados, paquetes turísticos, excursiones de aventura, experiencias gastronómicas y traslados. ¡Reserva ahora!"
     },
     "base": {
         "root": "/",
-        "es": "es",
+        "es": "es/",
         "whatsapp": "https://web.whatsapp.com/send?phone=51950163421"
     }
 }
